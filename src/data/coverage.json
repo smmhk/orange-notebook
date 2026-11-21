@@ -1,0 +1,688 @@
+{
+  "pages": 136,
+  "cards": 4976,
+  "reviewItems": 1790,
+  "generatedPractice": 4972,
+  "pageCoverage": [
+    {
+      "page": 1,
+      "nonBlankLines": 40,
+      "cardCount": 38
+    },
+    {
+      "page": 2,
+      "nonBlankLines": 38,
+      "cardCount": 29
+    },
+    {
+      "page": 3,
+      "nonBlankLines": 39,
+      "cardCount": 37
+    },
+    {
+      "page": 4,
+      "nonBlankLines": 39,
+      "cardCount": 37
+    },
+    {
+      "page": 5,
+      "nonBlankLines": 39,
+      "cardCount": 37
+    },
+    {
+      "page": 6,
+      "nonBlankLines": 39,
+      "cardCount": 36
+    },
+    {
+      "page": 7,
+      "nonBlankLines": 40,
+      "cardCount": 38
+    },
+    {
+      "page": 8,
+      "nonBlankLines": 38,
+      "cardCount": 35
+    },
+    {
+      "page": 9,
+      "nonBlankLines": 39,
+      "cardCount": 39
+    },
+    {
+      "page": 10,
+      "nonBlankLines": 39,
+      "cardCount": 44
+    },
+    {
+      "page": 11,
+      "nonBlankLines": 39,
+      "cardCount": 40
+    },
+    {
+      "page": 12,
+      "nonBlankLines": 39,
+      "cardCount": 40
+    },
+    {
+      "page": 13,
+      "nonBlankLines": 39,
+      "cardCount": 39
+    },
+    {
+      "page": 14,
+      "nonBlankLines": 39,
+      "cardCount": 43
+    },
+    {
+      "page": 15,
+      "nonBlankLines": 39,
+      "cardCount": 38
+    },
+    {
+      "page": 16,
+      "nonBlankLines": 39,
+      "cardCount": 36
+    },
+    {
+      "page": 17,
+      "nonBlankLines": 39,
+      "cardCount": 40
+    },
+    {
+      "page": 18,
+      "nonBlankLines": 39,
+      "cardCount": 42
+    },
+    {
+      "page": 19,
+      "nonBlankLines": 39,
+      "cardCount": 41
+    },
+    {
+      "page": 20,
+      "nonBlankLines": 39,
+      "cardCount": 37
+    },
+    {
+      "page": 21,
+      "nonBlankLines": 39,
+      "cardCount": 38
+    },
+    {
+      "page": 22,
+      "nonBlankLines": 39,
+      "cardCount": 35
+    },
+    {
+      "page": 23,
+      "nonBlankLines": 39,
+      "cardCount": 32
+    },
+    {
+      "page": 24,
+      "nonBlankLines": 39,
+      "cardCount": 39
+    },
+    {
+      "page": 25,
+      "nonBlankLines": 40,
+      "cardCount": 36
+    },
+    {
+      "page": 26,
+      "nonBlankLines": 39,
+      "cardCount": 40
+    },
+    {
+      "page": 27,
+      "nonBlankLines": 41,
+      "cardCount": 35
+    },
+    {
+      "page": 28,
+      "nonBlankLines": 39,
+      "cardCount": 40
+    },
+    {
+      "page": 29,
+      "nonBlankLines": 39,
+      "cardCount": 35
+    },
+    {
+      "page": 30,
+      "nonBlankLines": 39,
+      "cardCount": 36
+    },
+    {
+      "page": 31,
+      "nonBlankLines": 40,
+      "cardCount": 43
+    },
+    {
+      "page": 32,
+      "nonBlankLines": 39,
+      "cardCount": 36
+    },
+    {
+      "page": 33,
+      "nonBlankLines": 39,
+      "cardCount": 39
+    },
+    {
+      "page": 34,
+      "nonBlankLines": 40,
+      "cardCount": 37
+    },
+    {
+      "page": 35,
+      "nonBlankLines": 39,
+      "cardCount": 39
+    },
+    {
+      "page": 36,
+      "nonBlankLines": 39,
+      "cardCount": 34
+    },
+    {
+      "page": 37,
+      "nonBlankLines": 39,
+      "cardCount": 44
+    },
+    {
+      "page": 38,
+      "nonBlankLines": 38,
+      "cardCount": 40
+    },
+    {
+      "page": 39,
+      "nonBlankLines": 38,
+      "cardCount": 38
+    },
+    {
+      "page": 40,
+      "nonBlankLines": 39,
+      "cardCount": 37
+    },
+    {
+      "page": 41,
+      "nonBlankLines": 38,
+      "cardCount": 35
+    },
+    {
+      "page": 42,
+      "nonBlankLines": 40,
+      "cardCount": 35
+    },
+    {
+      "page": 43,
+      "nonBlankLines": 39,
+      "cardCount": 30
+    },
+    {
+      "page": 44,
+      "nonBlankLines": 39,
+      "cardCount": 32
+    },
+    {
+      "page": 45,
+      "nonBlankLines": 38,
+      "cardCount": 30
+    },
+    {
+      "page": 46,
+      "nonBlankLines": 40,
+      "cardCount": 31
+    },
+    {
+      "page": 47,
+      "nonBlankLines": 38,
+      "cardCount": 34
+    },
+    {
+      "page": 48,
+      "nonBlankLines": 39,
+      "cardCount": 39
+    },
+    {
+      "page": 49,
+      "nonBlankLines": 40,
+      "cardCount": 37
+    },
+    {
+      "page": 50,
+      "nonBlankLines": 38,
+      "cardCount": 40
+    },
+    {
+      "page": 51,
+      "nonBlankLines": 39,
+      "cardCount": 31
+    },
+    {
+      "page": 52,
+      "nonBlankLines": 39,
+      "cardCount": 32
+    },
+    {
+      "page": 53,
+      "nonBlankLines": 39,
+      "cardCount": 35
+    },
+    {
+      "page": 54,
+      "nonBlankLines": 39,
+      "cardCount": 36
+    },
+    {
+      "page": 55,
+      "nonBlankLines": 38,
+      "cardCount": 31
+    },
+    {
+      "page": 56,
+      "nonBlankLines": 40,
+      "cardCount": 38
+    },
+    {
+      "page": 57,
+      "nonBlankLines": 39,
+      "cardCount": 33
+    },
+    {
+      "page": 58,
+      "nonBlankLines": 39,
+      "cardCount": 41
+    },
+    {
+      "page": 59,
+      "nonBlankLines": 39,
+      "cardCount": 40
+    },
+    {
+      "page": 60,
+      "nonBlankLines": 39,
+      "cardCount": 30
+    },
+    {
+      "page": 61,
+      "nonBlankLines": 39,
+      "cardCount": 36
+    },
+    {
+      "page": 62,
+      "nonBlankLines": 39,
+      "cardCount": 29
+    },
+    {
+      "page": 63,
+      "nonBlankLines": 38,
+      "cardCount": 32
+    },
+    {
+      "page": 64,
+      "nonBlankLines": 39,
+      "cardCount": 35
+    },
+    {
+      "page": 65,
+      "nonBlankLines": 39,
+      "cardCount": 36
+    },
+    {
+      "page": 66,
+      "nonBlankLines": 39,
+      "cardCount": 37
+    },
+    {
+      "page": 67,
+      "nonBlankLines": 38,
+      "cardCount": 37
+    },
+    {
+      "page": 68,
+      "nonBlankLines": 40,
+      "cardCount": 38
+    },
+    {
+      "page": 69,
+      "nonBlankLines": 40,
+      "cardCount": 33
+    },
+    {
+      "page": 70,
+      "nonBlankLines": 38,
+      "cardCount": 33
+    },
+    {
+      "page": 71,
+      "nonBlankLines": 40,
+      "cardCount": 34
+    },
+    {
+      "page": 72,
+      "nonBlankLines": 41,
+      "cardCount": 34
+    },
+    {
+      "page": 73,
+      "nonBlankLines": 39,
+      "cardCount": 40
+    },
+    {
+      "page": 74,
+      "nonBlankLines": 40,
+      "cardCount": 38
+    },
+    {
+      "page": 75,
+      "nonBlankLines": 39,
+      "cardCount": 43
+    },
+    {
+      "page": 76,
+      "nonBlankLines": 39,
+      "cardCount": 34
+    },
+    {
+      "page": 77,
+      "nonBlankLines": 39,
+      "cardCount": 38
+    },
+    {
+      "page": 78,
+      "nonBlankLines": 38,
+      "cardCount": 42
+    },
+    {
+      "page": 79,
+      "nonBlankLines": 39,
+      "cardCount": 40
+    },
+    {
+      "page": 80,
+      "nonBlankLines": 39,
+      "cardCount": 38
+    },
+    {
+      "page": 81,
+      "nonBlankLines": 39,
+      "cardCount": 37
+    },
+    {
+      "page": 82,
+      "nonBlankLines": 38,
+      "cardCount": 38
+    },
+    {
+      "page": 83,
+      "nonBlankLines": 39,
+      "cardCount": 35
+    },
+    {
+      "page": 84,
+      "nonBlankLines": 38,
+      "cardCount": 34
+    },
+    {
+      "page": 85,
+      "nonBlankLines": 36,
+      "cardCount": 35
+    },
+    {
+      "page": 86,
+      "nonBlankLines": 36,
+      "cardCount": 36
+    },
+    {
+      "page": 87,
+      "nonBlankLines": 37,
+      "cardCount": 36
+    },
+    {
+      "page": 88,
+      "nonBlankLines": 27,
+      "cardCount": 25
+    },
+    {
+      "page": 89,
+      "nonBlankLines": 32,
+      "cardCount": 32
+    },
+    {
+      "page": 90,
+      "nonBlankLines": 37,
+      "cardCount": 35
+    },
+    {
+      "page": 91,
+      "nonBlankLines": 37,
+      "cardCount": 34
+    },
+    {
+      "page": 92,
+      "nonBlankLines": 39,
+      "cardCount": 39
+    },
+    {
+      "page": 93,
+      "nonBlankLines": 38,
+      "cardCount": 38
+    },
+    {
+      "page": 94,
+      "nonBlankLines": 39,
+      "cardCount": 40
+    },
+    {
+      "page": 95,
+      "nonBlankLines": 39,
+      "cardCount": 39
+    },
+    {
+      "page": 96,
+      "nonBlankLines": 40,
+      "cardCount": 45
+    },
+    {
+      "page": 97,
+      "nonBlankLines": 39,
+      "cardCount": 38
+    },
+    {
+      "page": 98,
+      "nonBlankLines": 38,
+      "cardCount": 36
+    },
+    {
+      "page": 99,
+      "nonBlankLines": 39,
+      "cardCount": 39
+    },
+    {
+      "page": 100,
+      "nonBlankLines": 38,
+      "cardCount": 37
+    },
+    {
+      "page": 101,
+      "nonBlankLines": 39,
+      "cardCount": 39
+    },
+    {
+      "page": 102,
+      "nonBlankLines": 38,
+      "cardCount": 36
+    },
+    {
+      "page": 103,
+      "nonBlankLines": 39,
+      "cardCount": 38
+    },
+    {
+      "page": 104,
+      "nonBlankLines": 39,
+      "cardCount": 42
+    },
+    {
+      "page": 105,
+      "nonBlankLines": 40,
+      "cardCount": 40
+    },
+    {
+      "page": 106,
+      "nonBlankLines": 40,
+      "cardCount": 45
+    },
+    {
+      "page": 107,
+      "nonBlankLines": 38,
+      "cardCount": 37
+    },
+    {
+      "page": 108,
+      "nonBlankLines": 39,
+      "cardCount": 41
+    },
+    {
+      "page": 109,
+      "nonBlankLines": 39,
+      "cardCount": 36
+    },
+    {
+      "page": 110,
+      "nonBlankLines": 39,
+      "cardCount": 40
+    },
+    {
+      "page": 111,
+      "nonBlankLines": 37,
+      "cardCount": 39
+    },
+    {
+      "page": 112,
+      "nonBlankLines": 38,
+      "cardCount": 37
+    },
+    {
+      "page": 113,
+      "nonBlankLines": 38,
+      "cardCount": 39
+    },
+    {
+      "page": 114,
+      "nonBlankLines": 37,
+      "cardCount": 35
+    },
+    {
+      "page": 115,
+      "nonBlankLines": 38,
+      "cardCount": 40
+    },
+    {
+      "page": 116,
+      "nonBlankLines": 37,
+      "cardCount": 37
+    },
+    {
+      "page": 117,
+      "nonBlankLines": 38,
+      "cardCount": 41
+    },
+    {
+      "page": 118,
+      "nonBlankLines": 37,
+      "cardCount": 44
+    },
+    {
+      "page": 119,
+      "nonBlankLines": 39,
+      "cardCount": 40
+    },
+    {
+      "page": 120,
+      "nonBlankLines": 39,
+      "cardCount": 41
+    },
+    {
+      "page": 121,
+      "nonBlankLines": 39,
+      "cardCount": 42
+    },
+    {
+      "page": 122,
+      "nonBlankLines": 38,
+      "cardCount": 39
+    },
+    {
+      "page": 123,
+      "nonBlankLines": 39,
+      "cardCount": 43
+    },
+    {
+      "page": 124,
+      "nonBlankLines": 39,
+      "cardCount": 31
+    },
+    {
+      "page": 125,
+      "nonBlankLines": 40,
+      "cardCount": 36
+    },
+    {
+      "page": 126,
+      "nonBlankLines": 37,
+      "cardCount": 31
+    },
+    {
+      "page": 127,
+      "nonBlankLines": 41,
+      "cardCount": 29
+    },
+    {
+      "page": 128,
+      "nonBlankLines": 42,
+      "cardCount": 33
+    },
+    {
+      "page": 129,
+      "nonBlankLines": 41,
+      "cardCount": 32
+    },
+    {
+      "page": 130,
+      "nonBlankLines": 38,
+      "cardCount": 36
+    },
+    {
+      "page": 131,
+      "nonBlankLines": 38,
+      "cardCount": 35
+    },
+    {
+      "page": 132,
+      "nonBlankLines": 42,
+      "cardCount": 32
+    },
+    {
+      "page": 133,
+      "nonBlankLines": 41,
+      "cardCount": 34
+    },
+    {
+      "page": 134,
+      "nonBlankLines": 40,
+      "cardCount": 40
+    },
+    {
+      "page": 135,
+      "nonBlankLines": 40,
+      "cardCount": 34
+    },
+    {
+      "page": 136,
+      "nonBlankLines": 10,
+      "cardCount": 10
+    }
+  ]
+}
