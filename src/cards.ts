@@ -35,13 +35,13 @@ export function getCard(id: unknown): Card | undefined {
 }
 
 export function cardLabel(card: Card) {
-  return card.number ? `${card.number}번 · ${card.sources[0].page}쪽` : `${card.sources[0].page}쪽 · 추가 표현`
+  return card.number ? `Card ${card.number} · p. ${card.sources[0].page}` : `Bonus expression · p. ${card.sources[0].page}`
 }
 
 export function sourceLabel(card: Card) {
   return card.sources.map(source => {
-    const pages = source.endPage && source.endPage !== source.page ? `${source.page}–${source.endPage}쪽` : `${source.page}쪽`
-    return source.number ? `${pages} ${source.number}번` : pages
+    const pages = source.endPage && source.endPage !== source.page ? `pp. ${source.page}–${source.endPage}` : `p. ${source.page}`
+    return source.number ? `${pages}, card ${source.number}` : pages
   }).join(', ')
 }
 

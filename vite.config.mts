@@ -26,7 +26,7 @@ export default defineConfig(({ mode }) => {
             outgoing.end(Buffer.from(await response.arrayBuffer()))
           } catch {
             outgoing.writeHead(500, { 'Content-Type': 'application/json' })
-            outgoing.end(JSON.stringify({ error: '로컬 서버 요청을 처리하지 못했어요. 다시 시도해 주세요.' }))
+            outgoing.end(JSON.stringify({ error: 'The local server could not process the request. Try again.' }))
           }
         })
       },
