@@ -1,50 +1,13 @@
 # Orange Notebook 🍊
 
-《오렌지 노트 2018.pdf》를 기반으로 한 영어 말하기 앱입니다. 번호나 영어 표현으로 카드를 찾아 녹음하고, 받아쓰기를 확인한 뒤 피드백을 받습니다. 녹음·받아쓰기·피드백과 카드별 복습 기록은 브라우저의 IndexedDB에 저장됩니다.
+![Orange Notebook home screen](docs/orange-notebook-home.png)
 
-## VS Code에서 실행
+I used to save English phrases I liked in a notebook. My list kept growing, but I barely practiced saying them out loud. Then, when I wanted to use one in a real conversation, it wouldn’t come to mind. So I made a little site to practice. 🌱
 
-1. ZIP을 풀고 VS Code에서 `orange-notebook` 폴더를 엽니다.
-2. Node.js 24가 설치된 터미널에서 `npm ci`를 실행합니다.
-3. `.env.example`을 `.env.local`로 복사하고 아래 서버 변수에 각 키를 설정합니다.
-4. `npm run dev`를 실행한 뒤 터미널에 표시되는 localhost 주소를 Chrome 또는 Safari에서 엽니다. 마이크는 localhost와 HTTPS에서 사용할 수 있습니다.
+🎙️ I pick a card, read the situation in Korean, and answer out loud in English. If I get stuck, I flip the card for an example. The next day, I can try the same phrase in a new situation and earn an orange. 🍊
 
-| 변수 | 사용처 |
-| --- | --- |
-| `OPENAI_API_KEY` | 기존 OpenAI 음성 받아쓰기. 사용량에 따라 OpenAI API 비용이 발생할 수 있습니다. |
-| `GEMINI_API_KEY` | Gemini 영어 피드백. [Google AI Studio](https://aistudio.google.com/apikey)에서 발급합니다. |
+✨ I built it with React and TypeScript and connected two APIs. OpenAI turns my recording into text, and Gemini gives me feedback after I’ve checked the transcript. Both API keys stay on the server.
 
-Gemini 무료 티어로 테스트하려면 결제가 연결되지 않은 프로젝트의 키를 사용하세요. 피드백은 [공식 가격표](https://ai.google.dev/gemini-api/docs/pricing)에 있는 `gemini-3.5-flash-lite`만 호출합니다. 받아쓰기를 요청하면 음성이 OpenAI에 전송됩니다. Gemini 피드백 요청에는 확인한 영어 텍스트, 연습 상황과 목표 표현이 포함됩니다. 한도 초과나 오류가 나면 같은 받아쓰기로 다시 요청하거나 ‘ChatGPT용 피드백 요청 복사’를 사용할 수 있습니다.
+### Try it locally 🌿
 
-## GitHub에서 Vercel로 연결
-
-1. GitHub에 저장소를 만든 뒤 이 폴더를 커밋하고 푸시합니다. 실제 키가 들어 있는 `.env.local`은 Git에서 제외됩니다.
-2. Vercel에서 **Add New → Project**를 선택하고 저장소를 가져옵니다.
-3. 루트는 ZIP에서 푼 프로젝트 폴더로 지정하고 Node.js 24를 선택합니다. `vercel.json`에 Vite, `npm run build:client`, 출력 디렉터리 `dist`가 지정돼 있습니다.
-4. **Settings → Environment Variables**에서 `OPENAI_API_KEY`와 `GEMINI_API_KEY`를 서버 환경 변수로 추가하고 배포합니다. `api/`의 서버 함수가 받아쓰기와 피드백을 처리합니다. 긴 녹음 파일에는 Vercel 함수의 요청 크기 제한이 적용될 수 있습니다.
-
-607번은 기존 IndexedDB 및 브라우저 저장소 키를 사용합니다. 브라우저는 주소(출처)별로 저장소를 나누므로 기존 주소와 같은 주소에서 이 버전을 실행해야 예전 기록이 나타납니다. 새 Vercel 주소에는 예전 주소의 개인 녹음이 자동으로 옮겨지지 않습니다.
-
-## 카드 데이터와 검토
-
-- `src/data/cards.json`에는 영어 추출문, 학습용 표현, 한국어 뜻, 상황·예문, PDF 페이지와 문장 번호 및 출처 행이 있습니다. `original`은 추출한 영어이고 `sources[].text`에는 한국어와 변형 표현까지 포함한 출처 텍스트가 남습니다.
-- `src/data/coverage.json`에는 전체 페이지 및 페이지별 추출 수가 있습니다. 번호는 문서 안에서 반복되므로 카드 ID와 별도로 보존했습니다.
-- `src/data/review-list.json`에는 번역, 페이지 경계, 인라인 구분, 자리표시자 등을 확인할 항목이 들어 있습니다. 여러 페이지에 걸친 항목은 끝 페이지도 표시합니다. 인라인 변형을 별도 카드로 다룬 경우 모항목에도 문맥을 보존했습니다.
-- 607번과 앞·중간·뒤 대표 한 장씩은 별도로 다듬었습니다. 나머지 상황·예문은 자동 생성 초안으로, `generatedPractice`로 구분합니다. 영어만 있는 항목의 한국어 뜻은 오프라인 번역 결과이며 원본 PDF를 대조해 다듬을 수 있습니다.
-
-## 실제 휴대폰에서 확인
-
-배포를 마친 **Vercel HTTPS URL**을 iPhone Safari와 Android Chrome에서 각각 직접 엽니다. 메신저 안에서 열린 경우 브라우저에서 다시 여세요. 두 서버 변수는 테스트하는 배포 환경에 설정하고 변경 후 재배포합니다.
-
-| 확인할 항목 | 통과 기준 |
-| --- | --- |
-| 모바일 레이아웃 | 세로 화면에서 607번 검색, 녹음 버튼, 영어 문장과 피드백이 가로 스크롤 없이 보여요. |
-| 마이크 권한 | ‘녹음 시작’에서 허용한 뒤 타이머가 올라가요. 거절하면 화면에 복구 방법이 표시돼요. 브라우저 사이트 설정에서 권한을 허용하고 다시 시도할 수 있어요. |
-| 녹음·재생 | 5~15초간 영어로 말하고 ‘녹음 끝내기’를 누르면 내 음성을 재생할 수 있어요. |
-| 실제 영어 받아쓰기 | 재생한 음성에 맞는 영어 문장이 나타나요. 받아쓰기가 틀리면 수정할 수 있어요. |
-| 실제 Gemini 피드백 | 확인한 답변으로 ‘AI 피드백 받기’를 누르면 상황 전달, 목표 표현, 한국어 조언과 영어 예문이 표시돼요. |
-| 새로고침 후 기록 | 같은 주소에서 새로고침한 뒤 ‘내 녹음’에서 음성, 받아쓰기와 피드백이 열려요. |
-
-Vercel에 보내는 음성은 최대 4 MB입니다. 크기를 넘긴 녹음은 브라우저에 남으므로 다시 듣고 더 짧게 녹음할 수 있어요. 녹음 중에는 화면을 켜고 앱 탭을 열어 둡니다. 기기별 결과를 남길 때에는 기종, OS 버전, 브라우저 버전, 배포 URL과 위 항목의 통과 여부를 기록하세요.
-
-이번 소스 검증에는 Linux 자동 테스트 환경의 모의 마이크와 모의 API를 사용했습니다. iPhone Safari와 Android Chrome 실기기 및 실서비스 키를 사용한 검사는 배포 후 진행할 항목입니다.
+With Node.js 24, run `npm ci` and `npm run dev`. For transcription and feedback, copy `.env.example` to `.env.local` and add your `OPENAI_API_KEY` and `GEMINI_API_KEY`. On Vercel, add those same keys in the project’s environment settings.
