@@ -181,3 +181,12 @@ audio { display: block; width: 100%; min-height: 48px; margin: 10px 0; }
   .catalog input, .recording-filter select { font-size: 16px; }
   .take .retry-button { width: 100%; }
 }
+
+.study-card { display: grid; gap: 10px; width: 100%; min-height: 148px; padding: 17px; text-align: left; color: inherit; }
+.study-card[data-side="back"] { background: #edf3e2; border-color: #cbd8b7; }
+.study-card-content { display: grid; gap: 7px; overflow-wrap: anywhere; line-height: 1.55; }
+.study-card-content strong { font-size: clamp(1.08rem, 3vw, 1.4rem); }
+.study-card-target, .study-card-action { color: var(--green); font-weight: 700; }
+.study-card-action, .study-card-note { font-size: 14px; }
+.study-card-note { color: var(--muted); }
+.study-card:disabled { opacity: 1; }

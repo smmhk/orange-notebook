@@ -4,7 +4,7 @@ import { cards, cardLabel, getCard, getScenario, reviewKey, sourceLabel } from '
 import type { Card, SceneKey } from './cards'
 import { feedbackInstructions, isFeedback } from './feedback'
 import { initialProgress, legacyProgress, localDay } from './progress'
-import { deleteRecording, getRecording, listRecordings, readProgress, saveFeedback, saveRecording, setPracticeStep, updateTranscript } from './recordings'
+import { deleteRecording, getRecording, listRecordings, markReviewHint, readProgress, saveFeedback, saveRecording, setPracticeStep, updateTranscript } from './recordings'
 import type { Recording } from './recordings'
 import { AudioPlayer, FeedbackView, RecordingList } from './RecordingViews'
 import { CardBrowser } from './CardBrowser'
@@ -193,12 +193,29 @@ function App() {
     }
   }
 
+  async function flipCard() {
+    if (busy) return
+    if (!revealed && screen === 'review' && due && !recording?.feedback) {
+      setActivity('saving')
+      try {
+        const updated = await markReviewHint(card, scene)
+        setProgressByCard(current => ({ ...current, [card.id]: updated }))
+      } catch {
+        setError(storageMessage)
+        return
+      } finally {
+        setActivity('idle')
+      }
+    }
+    setRevealed(!revealed)
+  }
+
   async function startRecording() {
     if (busy) return
     setError('')
     setActivity('permission')
     const recordedDay = localDay()
-    const eligible = screen === 'review' && !revealed && !openedRecording && !progress.earned &&
+    const eligible = screen === 'review' && !openedRecording && !progress.earned &&
       Boolean(progress.nextReview && progress.nextReview <= recordedDay && scene === reviewKey(card, progress.reviewRound))
     let stream: MediaStream | undefined
     try {
@@ -408,7 +425,21 @@ function App() {
           </li>)}</ul>}
         </>}
         {showPractice && <>
-          <div className="scenario"><span className="eyebrow">{scenario.title} · {attemptNumber}번째 시도</span><p>{scenario.prompt}</p></div>
+          <button type="button" className="scenario study-card" data-side={revealed ? 'back' : 'front'}
+            aria-expanded={revealed} aria-controls="study-card-content" disabled={busy} onClick={() => void flipCard()}>
+            <span className="eyebrow">{revealed ? '영어 예문' : `${scenario.title} · ${attemptNumber}번째 시도`}</span>
+            <span id="study-card-content" className="study-card-content">
+              {revealed ? <>
+                <strong lang="en">{scenario.example}</strong>
+                {scenario.example !== card.expression && <span lang="en" className="study-card-target">{card.expression}</span>}
+                <small>《오렌지 노트 2018.pdf》 {sourceLabel(card)}</small>
+              </> : <span>{scenario.prompt}</span>}
+            </span>
+            <span className="study-card-action">{revealed ? '↶ 상황 다시 보기' : '↻ 뒤집어서 영어 힌트 보기'}</span>
+          </button>
+          {screen === 'review' && due && !recording?.feedback && <p className="study-card-note">
+            {progress.hintedReviewRound === progress.reviewRound ? '힌트를 본 이번 복습은 연습으로 기록돼요.' : '오렌지를 모으려면 힌트 없이 말해 보세요.'}
+          </p>}
           {activityLabels[activity] && <p role="status" className="status">{activityLabels[activity]}</p>}
           {activity === 'recording' && <div className="capture">
             <span className="recording-status"><span aria-hidden="true" /> 녹음 중 <time>{String(Math.floor(seconds / 60)).padStart(2, '0')}:{String(seconds % 60).padStart(2, '0')}</time></span>
@@ -454,13 +485,6 @@ function App() {
               {reward && <div className="reward-banner" role="status"><span className="reward"><Fruit /></span><strong>오렌지 1개를 모았어요!</strong></div>}
               <FeedbackView feedback={recording.feedback} expression={card.expression} />
               {progress.nextReview && <p className="saved-status">다음 복습은 {dayLabel(progress.nextReview)}이에요.</p>}
-              {screen === 'practice' && <>
-                <button className="button secondary" aria-expanded={revealed} onClick={() => setRevealed(!revealed)}>{revealed ? '카드 표현과 예문 가리기' : '카드 표현과 예문 보기'}</button>
-                {revealed && <div className="answer">
-                  <strong lang="en">{card.expression}</strong><p lang="en">{card.original}</p>
-                  <p>{card.meaning} {card.usage}</p><p lang="en">{scenario.example}</p><small>《오렌지 노트 2018.pdf》 {sourceLabel(card)}</small>
-                </div>}
-              </>}
               <div className="actions feedback-actions">
                 <button className="button primary" onClick={retry}>다시 말하기</button>
                 {screen === 'practice' && <button className="button secondary" onClick={() => void changeScene()}>{scene === 'practice' ? '장면 바꾸기' : '연습 마치기'}</button>}

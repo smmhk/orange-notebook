@@ -1,7 +1,7 @@
-import { getCard } from './cards'
-import type { SceneKey } from './cards'
+import { getCard, reviewKey } from './cards'
+import type { Card, SceneKey } from './cards'
 import type { Feedback } from './feedback'
-import { completeAttempt, initialProgress, legacyProgress } from './progress'
+import { completeAttempt, initialProgress, legacyProgress, localDay } from './progress'
 import type { Progress } from './progress'
 
 export interface Recording {
@@ -117,6 +117,24 @@ export function setPracticeStep(cardId: string, step: Progress['practiceStep']) 
     request.onsuccess = () => {
       const next: Progress = { ...(request.result ?? (cardId === '607' ? legacyProgress() : initialProgress)), practiceStep: step }
       store.put(next, cardId)
+      done(next)
+    }
+  })
+}
+
+export function markReviewHint(card: Card, scene: SceneKey) {
+  return transact<Progress>(['progress'], 'readwrite', (tx, done) => {
+    const store = tx.objectStore('progress')
+    const request = store.get(card.id)
+    request.onsuccess = () => {
+      const current: Progress = request.result ?? (card.id === '607' ? legacyProgress() : initialProgress)
+      if (current.earned || !current.nextReview || current.nextReview > localDay() ||
+          scene !== reviewKey(card, current.reviewRound)) {
+        done(current)
+        return
+      }
+      const next = { ...current, hintedReviewRound: current.reviewRound }
+      store.put(next, card.id)
       done(next)
     }
   })

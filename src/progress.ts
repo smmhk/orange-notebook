@@ -6,6 +6,7 @@ export interface Progress {
   nextReview: string | null
   practiceStep: 'practice' | 'transfer'
   reviewRound: number
+  hintedReviewRound?: number
   earned: boolean
 }
 
@@ -43,7 +44,7 @@ export function completeAttempt(card: Card, progress: Progress, scene: SceneKey,
   const today = localDay()
   if (!eligible || recordedDay !== today || progress.earned || !progress.nextReview ||
       progress.nextReview > today || scene !== reviewKey(card, progress.reviewRound)) return progress
-  const passed = feedback.target === 'good'
+  const passed = feedback.target === 'good' && progress.hintedReviewRound !== progress.reviewRound
   return {
     ...progress,
     earned: passed,
